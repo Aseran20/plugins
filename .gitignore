@@ -5,8 +5,8 @@
 # Node modules
 node_modules/
 
-# Build output (rebuilt on install)
-**/dist/
+# Build output - but include MCP server dist for plugins
+# (plugins are copied as-is, no build step on install)
 
 # Local plugin settings
 .claude/*.local.md
