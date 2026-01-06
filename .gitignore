@@ -1,0 +1,17 @@
+# Environment variables (contains API keys)
+.env
+.env.local
+
+# Node modules
+node_modules/
+
+# Build output (rebuilt on install)
+**/dist/
+
+# Local plugin settings
+.claude/*.local.md
+
+# OS files
+.DS_Store
+Thumbs.db
+nul

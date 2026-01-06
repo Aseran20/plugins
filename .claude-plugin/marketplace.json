@@ -1,0 +1,20 @@
+{
+  "name": "adrian-plugins",
+  "owner": {
+    "name": "Adrian Turion"
+  },
+  "metadata": {
+    "description": "Collection de plugins Claude Code personnels",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "apollo",
+      "source": "./apollo-plugin",
+      "description": "Apollo.io integration for sales prospecting - search contacts, companies, and enrich data",
+      "version": "1.0.0",
+      "category": "sales",
+      "tags": ["apollo", "prospecting", "sales", "leads", "enrichment", "b2b"]
+    }
+  ]
+}

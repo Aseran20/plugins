@@ -1,0 +1,22 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "Apollo.io integration for sales prospecting - search contacts, companies, and enrich data",
+  "author": {
+    "name": "Adrian Turion"
+  },
+  "keywords": [
+    "apollo",
+    "prospecting",
+    "sales",
+    "leads",
+    "enrichment",
+    "b2b"
+  ],
+  "mcpServers": {
+    "apollo": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.js"]
+    }
+  }
+}

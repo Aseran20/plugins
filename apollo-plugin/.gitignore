@@ -1,0 +1,12 @@
+# Environment variables (contains API keys)
+.env
+.env.local
+
+# Node modules
+node_modules/
+
+# Build output
+mcp-server/dist/
+
+# Local plugin settings
+.claude/*.local.md
