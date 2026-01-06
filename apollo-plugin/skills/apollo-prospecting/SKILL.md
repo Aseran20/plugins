@@ -1,8 +1,9 @@
 ---
 name: Apollo Prospecting
 description: |
-  Use this skill when the user mentions "apollo", "prospection", "recherche contacts", "leads", "enrichissement", "B2B data", "find prospects", "company enrichment", or asks about searching for people or companies for sales purposes. This skill provides expertise on using Apollo.io API through the MCP tools.
-version: 1.0.0
+  Use this skill when the user mentions "apollo", "prospection", "recherche contacts", "leads", "enrichissement", "B2B data", "find prospects", "company enrichment", or asks about searching for people or companies for sales purposes. This skill provides expertise on using Apollo.io API through Python scripts.
+version: 2.0.0
+allowed-tools: Bash
 ---
 
 # Apollo.io Prospecting Guide
@@ -48,19 +49,45 @@ Les petites entreprises locales (ex: "FTS Forêts Sàrl") ne sont souvent pas da
 
 ---
 
-## Available Tools
+## Script Usage
 
-The Apollo plugin provides these MCP tools:
+The Apollo plugin provides a Python script at `${CLAUDE_PLUGIN_ROOT}/skills/apollo-prospecting/scripts/apollo.py`.
 
-| Tool | Purpose | Credits |
-|------|---------|---------|
-| `search_people` | Find contacts by job title, location, company size | FREE |
-| `search_companies` | Find companies by name, location, funding, tech stack | Consumes |
-| `enrich_person` | Get email, phone, employment history for a contact | Consumes |
-| `enrich_company` | Get full company data by domain | Consumes |
-| `enrich_company_by_name` | Find + enrich company by name (auto-matches domain) | Consumes |
-| `bulk_enrich_companies` | Enrich multiple companies from a name list | Consumes |
-| `export_to_csv` | Export results to CSV format | FREE |
+**Requires**: `APOLLO_API_KEY` environment variable.
+
+### Available Commands
+
+| Command | Purpose | Credits |
+|---------|---------|---------|
+| `search-people` | Find contacts by job title, location, company size | FREE |
+| `search-companies` | Find companies by name, location, funding, tech stack | Consumes |
+| `enrich-person` | Get email, phone, employment history for a contact | Consumes |
+| `enrich-company` | Get full company data by domain | Consumes |
+| `enrich-company-by-name` | Find + enrich company by name | 2x Credits |
+| `bulk-enrich` | Enrich multiple companies from a name list | 2x each |
+| `export` | Export results to CSV format | FREE |
+
+### Quick Examples
+
+**Search for CEOs in France (FREE)**:
+```bash
+python ${CLAUDE_PLUGIN_ROOT}/skills/apollo-prospecting/scripts/apollo.py search-people --titles CEO CTO --org-locations France --employees "51,200" --per-page 10
+```
+
+**Enrich a company**:
+```bash
+python ${CLAUDE_PLUGIN_ROOT}/skills/apollo-prospecting/scripts/apollo.py enrich-company anthropic.com
+```
+
+**Enrich company by name**:
+```bash
+python ${CLAUDE_PLUGIN_ROOT}/skills/apollo-prospecting/scripts/apollo.py enrich-company-by-name "Anthropic"
+```
+
+**Bulk enrich**:
+```bash
+python ${CLAUDE_PLUGIN_ROOT}/skills/apollo-prospecting/scripts/apollo.py bulk-enrich "Anthropic" "OpenAI" "Mistral"
+```
 
 ## Search Filters Reference
 
