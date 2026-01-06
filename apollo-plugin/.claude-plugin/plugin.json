@@ -16,7 +16,10 @@
   "mcpServers": {
     "apollo": {
       "command": "node",
-      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.cjs"]
+      "args": ["${CLAUDE_PLUGIN_ROOT}/mcp-server/dist/index.cjs"],
+      "env": {
+        "APOLLO_API_KEY": "${APOLLO_API_KEY}"
+      }
     }
   }
 }

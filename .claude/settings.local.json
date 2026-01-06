@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_apollo_apollo__search_people",
+      "mcp__plugin_apollo_apollo__search_companies"
+    ]
+  }
+}
