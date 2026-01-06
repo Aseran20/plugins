@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
+// Load .env - try from env var first (for bundled distribution)
+// The APOLLO_API_KEY should be set as system environment variable
 import { config } from "dotenv";
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-
-// Load .env from plugin root
-const __dirname = dirname(fileURLToPath(import.meta.url));
-config({ path: resolve(__dirname, "../../.env") });
+config(); // Will load from process.cwd()/.env if exists
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
