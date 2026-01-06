@@ -11,8 +11,8 @@
     {
       "name": "apollo",
       "source": "./apollo-plugin",
-      "description": "Apollo.io integration for sales prospecting - search contacts, companies, and enrich data",
-      "version": "1.0.0",
+      "description": "Apollo.io integration for sales prospecting - search contacts, companies, and enrich data via Python scripts",
+      "version": "2.0.0",
       "category": "sales",
       "tags": ["apollo", "prospecting", "sales", "leads", "enrichment", "b2b"]
     }
